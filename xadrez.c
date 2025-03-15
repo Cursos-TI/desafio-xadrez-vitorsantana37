@@ -1,52 +1,53 @@
 #include <stdio.h>
 
-// Função para simular o movimento da Torre
+// Função recursiva para simular o movimento da Torre
 int movimentoTorre(int casas) {
-    printf("Movimento da Torre:\n");
-    for (int i = 0; i < casas; i++) {
+    if (casas > 0) {
         printf("Direita\n");
+        movimentoTorre(casas - 1);
     }
     return 0;
 }
 
-// Função para simular o movimento do Bispo
+// Função recursiva para simular o movimento do Bispo
 int movimentoBispo(int casas) {
-    printf("Movimento do Bispo:\n");
-    int i = 0;
-    while (i < casas) {
+    if (casas > 0) {
         printf("Cima, Direita\n");
-        i++;
+        movimentoBispo(casas - 1);
     }
     return 0;
 }
 
-// Função para simular o movimento da Rainha
+// Função recursiva para simular o movimento da Rainha
 int movimentoRainha(int casas) {
-    printf("Movimento da Rainha:\n");
-    int i = 0;
-    do {
+    if (casas > 0) {
         printf("Esquerda\n");
-        i++;
-    } while (i < casas);
+        movimentoRainha(casas - 1);
+    }
     return 0;
 }
 
 // Função para simular o movimento do Cavalo
 int movimentoCavalo() {
     printf("Movimento do Cavalo:\n");
-    int casasBaixo = 2;
-    int casasEsquerda = 1;
+    int casasCima = 2;
+    int casasDireita = 1;
 
-    // Movimento para baixo
-    for (int i = 0; i < casasBaixo; i++) {
-        printf("Baixo\n");
+    for (int i = 0; i < casasCima; i++) {
+        printf("Cima\n");
     }
+    printf("Direita\n");
 
-    // Movimento para a esquerda
-    int j = 0;
-    while (j < casasEsquerda) {
-        printf("Esquerda\n");
-        j++;
+    return 0;
+}
+
+// Função para simular o movimento do Bispo com loops aninhados
+int movimentoBispoAninhado(int casas) {
+    printf("Movimento do Bispo com loops aninhados:\n");
+    for (int i = 0; i < casas; i++) {
+        for (int j = 0; j < casas; j++) {
+            printf("Cima, Direita\n");
+        }
     }
     return 0;
 }
@@ -64,6 +65,9 @@ int main() {
     printf("\n\n"); // Linha em branco para separar o movimento do Cavalo
 
     movimentoCavalo();
+    printf("\n");
+
+    movimentoBispoAninhado(casasBispo);
 
     return 0;
 }
