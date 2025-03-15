@@ -31,6 +31,26 @@ int movimentoRainha(int casas) {
     return 0;
 }
 
+// Função para simular o movimento do Cavalo
+int movimentoCavalo() {
+    printf("Movimento do Cavalo:\n");
+    int casasBaixo = 2;
+    int casasEsquerda = 1;
+
+    // Movimento para baixo
+    for (int i = 0; i < casasBaixo; i++) {
+        printf("Baixo\n");
+    }
+
+    // Movimento para a esquerda
+    int j = 0;
+    while (j < casasEsquerda) {
+        printf("Esquerda\n");
+        j++;
+    }
+    return 0;
+}
+
 int main() {
     int casasTorre = 5;
     int casasBispo = 5;
@@ -41,6 +61,9 @@ int main() {
     movimentoBispo(casasBispo);
     printf("\n");
     movimentoRainha(casasRainha);
+    printf("\n\n"); // Linha em branco para separar o movimento do Cavalo
+
+    movimentoCavalo();
 
     return 0;
 }
